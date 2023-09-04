@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34018.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Part01 Hash Algorithms", "Part01 Hash Algorithms", "{45EE2473-1471-470D-A304-A2AD97F5FFDB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Part02 Encryption Algorithms", "Part02 Encryption Algorithms", "{F5A0F399-6740-40FE-8733-1D3A0EA9A199}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A9F3E4EC-F5AB-4AF8-8FA4-F1232DF167CC}
+	EndGlobalSection
+EndGlobal

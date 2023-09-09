@@ -2,15 +2,15 @@
 // Learn 01 - How to use hash algorithms
 //********** ********** ********** ********** ********** 
 
-//// This is our Original Data which we want to compute hash for
-//byte[] bytOriginalData = new byte[100];
+// This is our Original Data which we want to compute hash for
+byte[] bytOriginalData = new byte[100];
 
-//// We randomely generate an array of bytes to use as Original Data
-//// Don't worry! We'll learn how to compute hash of everything latter.
-//System.Security.Cryptography.RandomNumberGenerator.Create().GetBytes(bytOriginalData);
+// We randomely generate an array of bytes to use as Original Data
+// Don't worry! We'll learn how to compute hash of everything latter.
+System.Security.Cryptography.RandomNumberGenerator.Create().GetBytes(bytOriginalData);
 
-//// Bingo! we successfully generate our Original Data's Hash.
-//byte[] bytGeneratedHash = System.Security.Cryptography.MD5.HashData(bytOriginalData);
+// Bingo! we successfully generate our Original Data's Hash.
+byte[] bytGeneratedHash = System.Security.Cryptography.MD5.HashData(bytOriginalData);
 
 //********** ********** ********** ********** ********** 
 //********** ********** ********** ********** ********** 
@@ -242,7 +242,7 @@
 //// Lets Try:
 
 //using System.Linq;
-//using Lesson01_IntroducingHashAlgorithms.Learn09; // Lets use it for simply focus to user learning
+//using Lesson01_IntroducingHashAlgorithms.Learn07; // Lets use it for simply focus to user learning
 
 //if (DbContext.Login("Hamed", "123"))
 //{
@@ -313,26 +313,26 @@
 //********** ********** ********** ********** ********** 
 // Learn 09 - How to Validate Data?
 //********** ********** ********** ********** ********** 
-// Consider This Scenario:
-//          1) Somebody do transaction 2!!!
-//          2) He don't want to be arrested cause transfering money without it's owner permission
-//          3) What if he somehow access the data base and tamper IssuerIp?
-//          4) And we want to Validate the data to find out Tampering...
+//// Consider This Scenario:
+////          1) Somebody do transaction 2!!!
+////          2) He don't want to be arrested cause transfering money without it's owner permission
+////          3) What if he somehow access the data base and tamper IssuerIp?
+////          4) And we want to Validate the data to find out Tampering...
 
-// Lets Try:
+//// Lets Try:
 
-using System.Linq;
-using Lesson01_IntroducingHashAlgorithms.Learn09; // Lets use it for simply focus to user learning
+//using System.Linq;
+//using Lesson01_IntroducingHashAlgorithms.Learn09; // Lets use it for simply focus to user learning
 
-var transaction = DbContext.FindTransactionById(2);
-// Before Tampering data we could validate it
-transaction.ValidateData();
+//var transaction = DbContext.FindTransactionById(2);
+//// Before Tampering data we could validate it
+//transaction.ValidateData();
 
 
-transaction.IssuerIp = "26.123.241.65"; // He TAMPERED transaction data, Set  IssuerIp to the card owner Ip
+//transaction.IssuerIp = "26.123.241.65"; // He TAMPERED transaction data, Set  IssuerIp to the card owner Ip
 
-// But after tampering we couldn't
-transaction.ValidateData();
+//// But after tampering we couldn't
+//transaction.ValidateData();
 
 //********** ********** ********** ********** ********** 
 //********** ********** ********** ********** ********** 

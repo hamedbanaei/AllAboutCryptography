@@ -2,15 +2,15 @@
 // Learn 01 - How to use hash algorithms
 //********** ********** ********** ********** ********** 
 
-// This is our Original Data which we want to compute hash for
-byte[] bytOriginalData = new byte[100];
+//// This is our Original Data which we want to compute hash for
+//byte[] bytOriginalData = new byte[100];
 
-// We randomely generate an array of bytes to use as Original Data
-// Don't worry! We'll learn how to compute hash of everything latter.
-System.Security.Cryptography.RandomNumberGenerator.Create().GetBytes(bytOriginalData);
+//// We randomely generate an array of bytes to use as Original Data
+//// Don't worry! We'll learn how to compute hash of everything latter.
+//System.Security.Cryptography.RandomNumberGenerator.Create().GetBytes(bytOriginalData);
 
-// Bingo! we successfully generate our Original Data's Hash.
-byte[] bytGeneratedHash = System.Security.Cryptography.MD5.HashData(bytOriginalData);
+//// Bingo! we successfully generate our Original Data's Hash.
+//byte[] bytGeneratedHash = System.Security.Cryptography.MD5.HashData(bytOriginalData);
 
 //********** ********** ********** ********** ********** 
 //********** ********** ********** ********** ********** 
@@ -242,7 +242,7 @@ byte[] bytGeneratedHash = System.Security.Cryptography.MD5.HashData(bytOriginalD
 //// Lets Try:
 
 //using System.Linq;
-//using Lesson01_IntroducingHashAlgorithms.Learn07; // Lets use it for simply focus to user learning
+//using Lesson01_IntroducingHashAlgorithms.Learn09; // Lets use it for simply focus to user learning
 
 //if (DbContext.Login("Hamed", "123"))
 //{
@@ -271,6 +271,68 @@ byte[] bytGeneratedHash = System.Security.Cryptography.MD5.HashData(bytOriginalD
 //    System.Console.WriteLine("Hamed can't login with MrTechLead username but his password!");
 //}
 //// This is exactly the code we seen in Learn06 - What's happened? -> See Learn07.DbContext.HashPassword :D
+
+//********** ********** ********** ********** ********** 
+//********** ********** ********** ********** ********** 
+//********** ********** ********** ********** ********** 
+
+
+
+
+
+
+//********** ********** ********** ********** ********** 
+// Learn 08 - How to Validate Data? What if it Tampered Illegally
+//********** ********** ********** ********** ********** 
+//// Consider This Scenario:
+////          1) Somebody do transaction 2!!!
+////          2) He don't want to be arrested cause transfering money without it's owner permission
+////          3) What if he somehow access the data base and tamper IssuerIp?
+
+//// Lets Try:
+
+//using System.Linq;
+//using Lesson01_IntroducingHashAlgorithms.Learn08; // Lets use it for simply focus to user learning
+
+//var transaction = DbContext.FindTransactionById(2);
+//transaction.IssuerIp = "26.123.241.65"; // He TAMPERED transaction data, Set  IssuerIp to the card owner Ip
+
+//// Is here any kind of validation available that we can find out
+//// If the data is valid and nobody tampered it?
+//// Lets see in the following Learn09
+
+//********** ********** ********** ********** ********** 
+//********** ********** ********** ********** ********** 
+//********** ********** ********** ********** ********** 
+
+
+
+
+
+
+//********** ********** ********** ********** ********** 
+// Learn 09 - How to Validate Data?
+//********** ********** ********** ********** ********** 
+// Consider This Scenario:
+//          1) Somebody do transaction 2!!!
+//          2) He don't want to be arrested cause transfering money without it's owner permission
+//          3) What if he somehow access the data base and tamper IssuerIp?
+//          4) And we want to Validate the data to find out Tampering...
+
+// Lets Try:
+
+using System.Linq;
+using Lesson01_IntroducingHashAlgorithms.Learn09; // Lets use it for simply focus to user learning
+
+var transaction = DbContext.FindTransactionById(2);
+// Before Tampering data we could validate it
+transaction.ValidateData();
+
+
+transaction.IssuerIp = "26.123.241.65"; // He TAMPERED transaction data, Set  IssuerIp to the card owner Ip
+
+// But after tampering we couldn't
+transaction.ValidateData();
 
 //********** ********** ********** ********** ********** 
 //********** ********** ********** ********** ********** 

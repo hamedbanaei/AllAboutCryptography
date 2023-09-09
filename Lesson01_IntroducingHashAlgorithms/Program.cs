@@ -2,15 +2,15 @@
 // Learn 01 - How to use hash algorithms
 //********** ********** ********** ********** ********** 
 
-//// This is our Original Data which we want to compute hash for
-//byte[] bytOriginalData = new byte[100];
+// This is our Original Data which we want to compute hash for
+byte[] bytOriginalData = new byte[100];
 
-//// We randomely generate an array of bytes to use as Original Data
-//// Don't worry! We'll learn how to compute hash of everything latter.
-//System.Security.Cryptography.RandomNumberGenerator.Create().GetBytes(bytOriginalData);
+// We randomely generate an array of bytes to use as Original Data
+// Don't worry! We'll learn how to compute hash of everything latter.
+System.Security.Cryptography.RandomNumberGenerator.Create().GetBytes(bytOriginalData);
 
-//// Bingo! we successfully generate our Original Data's Hash.
-//byte[] bytGeneratedHash = System.Security.Cryptography.MD5.HashData(bytOriginalData);
+// Bingo! we successfully generate our Original Data's Hash.
+byte[] bytGeneratedHash = System.Security.Cryptography.MD5.HashData(bytOriginalData);
 
 //********** ********** ********** ********** ********** 
 //********** ********** ********** ********** ********** 
@@ -42,7 +42,7 @@
 
 //// All the preceding hash classes are children of the class: System.Security.Cryptography.HashAlgorithm
 //// Consider that System.Security.Cryptography.HashAlgorithm is an abstract class and you can't make object of it.
-//var test = new System.Security.Cryptography.HashAlgorithm();
+////var test = new System.Security.Cryptography.HashAlgorithm();
 
 //********** ********** ********** ********** ********** 
 //********** ********** ********** ********** ********** 
@@ -68,8 +68,9 @@
 //// Don't worry! We'll learn how to compute hash of everything latter.
 //System.Security.Cryptography.RandomNumberGenerator.Create().GetBytes(bytOriginalData);
 
-//System.Security.Cryptography.HashAlgorithm oHashAlgorithm =
-//    System.Security.Cryptography.MD5.Create();
+//System.Security.Cryptography.HashAlgorithm oHashAlgorithm = null;
+
+//oHashAlgorithm = System.Security.Cryptography.MD5.Create();
 //byte[] bytGeneratedMD5Hash = oHashAlgorithm.ComputeHash(bytOriginalData);
 
 //oHashAlgorithm = System.Security.Cryptography.SHA1.Create();
@@ -108,7 +109,7 @@
 //string strOriginalData = "Hello, my name is Hamed Banaei, you can call me Mr. Tech Lead. Glad to share this information with you.";
 
 //// Now, you should convert your Original Data to array of bytes
-//byte[] bytOriginalData=System.Text.Encoding.UTF8.GetBytes(strOriginalData);
+//byte[] bytOriginalData = System.Text.Encoding.UTF8.GetBytes(strOriginalData);
 
 //// Compute Hash
 //byte[] bytGeneratedHash = System.Security.Cryptography.SHA256.HashData(bytOriginalData);
@@ -122,6 +123,56 @@
 //string strHashInBase64Format = System.Convert.ToBase64String(bytGeneratedHash);
 //// It's safe and generate just visible characters, not anything else!
 
+//System.Console.WriteLine($"Original Data: {strOriginalData}");
+//System.Console.WriteLine($"Generated Hash: {strHashInBase64Format}");
+
+//********** ********** ********** ********** ********** 
+//********** ********** ********** ********** ********** 
+//********** ********** ********** ********** ********** 
+
+
+
+
+
+
+//********** ********** ********** ********** ********** 
+// Learn 05 - How hash algorithms can help for integrity
+//********** ********** ********** ********** ********** 
+//// Just notice:
+////          1) Hash algorithms has no reverse algorithms!!!
+////          2) When two Hashes are exactly the same, The Original Data are definitly the same!!!
+
+//// Lets Try:
+
+//using System.Linq;
+
+//string strOriginalData = "Hello, my name is Hamed Banaei, you can call me Mr. Tech Lead. Glad to share this information with you.";
+
+//System.Collections.Generic.List<string> hashCollections =
+//    new System.Collections.Generic.List<string>();
+
+//// Lemme give it a try and compute hash for 1,000,000 times for the same Original Data
+//for (int intIndex = 0; intIndex < 1_000_000; intIndex++)
+//{
+//    // Now, you should convert your Original Data to array of bytes
+//    byte[] bytOriginalData = System.Text.Encoding.UTF8.GetBytes(strOriginalData);
+//    byte[] bytGeneratedHash = System.Security.Cryptography.SHA256.HashData(bytOriginalData);
+//    string strHashInBase64Format = System.Convert.ToBase64String(bytGeneratedHash);
+//    hashCollections.Add(strHashInBase64Format);
+//}
+
+//// Now, lets see if there is any computed hash from the same original data with diffrent HASH???
+//var uniqueResult = hashCollections.Distinct().ToList();
+
+//System.Console.WriteLine("Distinct result is:");
+//foreach (var hash in uniqueResult)
+//{
+//    System.Console.WriteLine(hash);
+//}
+//System.Console.WriteLine(System.Environment.NewLine);
+//// As you can see it the console, there is only one unique hash generated
+//// with 1,000,000 times of iteration and the same Original data as input!!! :D
+
 //********** ********** ********** ********** ********** 
 //********** ********** ********** ********** ********** 
 //********** ********** ********** ********** ********** 
@@ -132,43 +183,94 @@
 
 
 //********** ********** ********** ********** ********** 
-// Learn 05 - How hash function can help for integrity
+// Learn 06 - How hash algorithms can help for Privacy (Not Security)
+//////********** ********** ********** ********** ********** 
+//// Just notice:
+////          1) Hash algorithms has no reverse algorithms!!!
+////          2) When two Hashes are exactly the same, The Original Data are definitly the same!!!
+
+//// Lets Try:
+
+//using System.Linq;
+//using Lesson01_IntroducingHashAlgorithms.Learn06; // Lets use it for simply focus to user learning
+
+//if (DbContext.Login("Hamed", "123"))
+//{
+//    System.Console.WriteLine("Hamed login with his password!");
+//}
+
+//if (DbContext.Login("MrTechLead", "123"))
+//{
+//    System.Console.WriteLine("Hamed login with MrTechLead username but his password!");
+//}
+//else
+//{
+//    System.Console.WriteLine("Hamed can't login with MrTechLead username but his password!");
+//}
+
+//// So good so far, how can hamed login as MrTechLead with his password????!!!!!!!!!
+//// Just imagine Hamed illegally accessed to database and replace MrTechLead Pass (Hashed Pass) with his one:
+//DbContext.Users[2].Password = DbContext.Users[0].Password; // This is called: Hash Replacement Attack
+//// And now guess what:
+//if (DbContext.Login("MrTechLead", "123"))
+//{
+//    System.Console.WriteLine("Hamed login with MrTechLead username but his password!");
+//}
+//else
+//{
+//    System.Console.WriteLine("Hamed can't login with MrTechLead username but his password!");
+//}
+//// This is one of many reasons that Hashing Users Password is just for Privacy
+
 //********** ********** ********** ********** ********** 
-// Just notice:
-//          1) Hash algorithms has no reverse algorithms!!!
-//          2) When two Hashes are exactly the same, The Original Data are definitly the same!!!
+//********** ********** ********** ********** ********** 
+//********** ********** ********** ********** ********** 
 
-// Lets Try:
 
-using System;
-using System.Linq;
 
-string strOriginalData = "Hello, my name is Hamed Banaei, you can call me Mr. Tech Lead. Glad to share this information with you.";
 
-System.Collections.Generic.List<string> hashCollections =
-    new System.Collections.Generic.List<string>();
 
-// Lemme give it a try and compute hash for 100,000 times for the same Original Data
-for (int intIndex = 0; intIndex < 100_000; intIndex++)
-{
-    // Now, you should convert your Original Data to array of bytes
-    byte[] bytOriginalData = System.Text.Encoding.UTF8.GetBytes(strOriginalData);
-    byte[] bytGeneratedHash = System.Security.Cryptography.SHA256.HashData(bytOriginalData);
-    string strHashInBase64Format = System.Convert.ToBase64String(bytGeneratedHash);
-    hashCollections.Add(strHashInBase64Format);
-}
 
-// Now, lets see if there is any computed hash from the same original data with diffrent HASH???
-var uniqueResult = hashCollections.Distinct().ToList();
+//********** ********** ********** ********** ********** 
+// Learn 07 - How to Securely prevent Hash Replacement Attack?
+//********** ********** ********** ********** ********** 
+//// Just notice:
+////          1) Hash algorithms has no reverse algorithms!!!
+////          2) When two Hashes are exactly the same, The Original Data are definitly the same!!!
+////          3) We can prevent Hash Replacement Attacks with combination of some other fields, in this case, username
 
-System.Console.WriteLine("Distinct result is:");
-foreach (var hash in uniqueResult)
-{
-    Console.WriteLine(hash);
-}
-System.Console.WriteLine(Environment.NewLine);
-// As you can see it the console, there is only one unique hash generated
-// with 100,000 times of iteration and the same Original data as input!!! :D
+//// Lets Try:
+
+//using System.Linq;
+//using Lesson01_IntroducingHashAlgorithms.Learn07; // Lets use it for simply focus to user learning
+
+//if (DbContext.Login("Hamed", "123"))
+//{
+//    System.Console.WriteLine("Hamed login with his password!");
+//}
+
+//if (DbContext.Login("MrTechLead", "123"))
+//{
+//    System.Console.WriteLine("Hamed login with MrTechLead username but his password!");
+//}
+//else
+//{
+//    System.Console.WriteLine("Hamed can't login with MrTechLead username but his password!");
+//}
+
+//// So good so far, how can hamed login as MrTechLead with his password????!!!!!!!!!
+//// Just imagine Hamed illegally accessed to database and replace MrTechLead Pass (Hashed Pass) with his one:
+//DbContext.Users[2].Password = DbContext.Users[0].Password;
+//// And now guess what:
+//if (DbContext.Login("MrTechLead", "123"))
+//{
+//    System.Console.WriteLine("Hamed login with MrTechLead username but his password!");
+//}
+//else
+//{
+//    System.Console.WriteLine("Hamed can't login with MrTechLead username but his password!");
+//}
+//// This is exactly the code we seen in Learn06 - What's happened? -> See Learn07.DbContext.HashPassword :D
 
 //********** ********** ********** ********** ********** 
 //********** ********** ********** ********** ********** 

@@ -3,14 +3,20 @@
 //********** ********** ********** ********** ********** 
 
 // This is our Original Data which we want to compute hash for
+using Lesson01_IntroducingHashAlgorithms;
+
 byte[] bytOriginalData = new byte[100];
 
 // We randomely generate an array of bytes to use as Original Data
 // Don't worry! We'll learn how to compute hash of everything latter.
 System.Security.Cryptography.RandomNumberGenerator.Create().GetBytes(bytOriginalData);
+Utilities.ShowByteArray(bytOriginalData, "Generated Original Data");
+
+System.Console.WriteLine(System.Environment.NewLine);
 
 // Bingo! we successfully generate our Original Data's Hash.
 byte[] bytGeneratedHash = System.Security.Cryptography.MD5.HashData(bytOriginalData);
+Utilities.ShowByteArray(bytGeneratedHash, "Generated Hash");
 
 //********** ********** ********** ********** ********** 
 //********** ********** ********** ********** ********** 
@@ -31,13 +37,29 @@ byte[] bytGeneratedHash = System.Security.Cryptography.MD5.HashData(bytOriginalD
 //// We randomely generate an array of bytes to use as Original Data
 //// Don't worry! We'll learn how to compute hash of everything latter.
 //System.Security.Cryptography.RandomNumberGenerator.Create().GetBytes(bytOriginalData);
+//Lesson01_IntroducingHashAlgorithms.Utilities
+//    .ShowByteArray(bytOriginalData, "Generated Original Data");
 
 //// Here is a list of well-know widly used hash algorithms:
 //byte[] bytGeneratedMD5Hash = System.Security.Cryptography.MD5.HashData(bytOriginalData);
+//Lesson01_IntroducingHashAlgorithms.Utilities
+//    .ShowByteArray(bytGeneratedMD5Hash, "Generated MD5 Hash");
+
 //byte[] bytGeneratedSHA1Hash = System.Security.Cryptography.SHA1.HashData(bytOriginalData);
+//Lesson01_IntroducingHashAlgorithms.Utilities
+//    .ShowByteArray(bytGeneratedSHA1Hash, "Generated SHA1 Hash");
+
 //byte[] bytGeneratedSHA256Hash = System.Security.Cryptography.SHA256.HashData(bytOriginalData);
+//Lesson01_IntroducingHashAlgorithms.Utilities
+//    .ShowByteArray(bytGeneratedSHA256Hash, "Generated SHA256 Hash");
+
 //byte[] bytGeneratedSHA384Hash = System.Security.Cryptography.SHA384.HashData(bytOriginalData);
+//Lesson01_IntroducingHashAlgorithms.Utilities
+//    .ShowByteArray(bytGeneratedSHA384Hash, "Generated SHA384 Hash");
+
 //byte[] bytGeneratedSHA512Hash = System.Security.Cryptography.SHA512.HashData(bytOriginalData);
+//Lesson01_IntroducingHashAlgorithms.Utilities
+//    .ShowByteArray(bytGeneratedSHA512Hash, "Generated SHA512 Hash");
 
 
 //// All the preceding hash classes are children of the class: System.Security.Cryptography.HashAlgorithm
@@ -68,22 +90,36 @@ byte[] bytGeneratedHash = System.Security.Cryptography.MD5.HashData(bytOriginalD
 //// Don't worry! We'll learn how to compute hash of everything latter.
 //System.Security.Cryptography.RandomNumberGenerator.Create().GetBytes(bytOriginalData);
 
+//Lesson01_IntroducingHashAlgorithms.Utilities
+//    .ShowByteArray(bytOriginalData, "Generated Original Data");
+
+
 //System.Security.Cryptography.HashAlgorithm oHashAlgorithm = null;
 
 //oHashAlgorithm = System.Security.Cryptography.MD5.Create();
 //byte[] bytGeneratedMD5Hash = oHashAlgorithm.ComputeHash(bytOriginalData);
+//Lesson01_IntroducingHashAlgorithms.Utilities
+//    .ShowByteArray(bytGeneratedMD5Hash, "Generated MD5 Hash");
 
 //oHashAlgorithm = System.Security.Cryptography.SHA1.Create();
 //byte[] bytGeneratedSHA1Hash = oHashAlgorithm.ComputeHash(bytOriginalData);
+//Lesson01_IntroducingHashAlgorithms.Utilities
+//    .ShowByteArray(bytGeneratedSHA1Hash, "Generated SHA1 Hash");
 
 //oHashAlgorithm = System.Security.Cryptography.SHA256.Create();
 //byte[] bytGeneratedSHA256Hash = oHashAlgorithm.ComputeHash(bytOriginalData);
+//Lesson01_IntroducingHashAlgorithms.Utilities
+//    .ShowByteArray(bytGeneratedSHA256Hash, "Generated SHA256 Hash");
 
 //oHashAlgorithm = System.Security.Cryptography.SHA384.Create();
 //byte[] bytGeneratedSHA384Hash = oHashAlgorithm.ComputeHash(bytOriginalData);
+//Lesson01_IntroducingHashAlgorithms.Utilities
+//    .ShowByteArray(bytGeneratedSHA384Hash, "Generated SHA384 Hash");
 
 //oHashAlgorithm = System.Security.Cryptography.SHA512.Create();
 //byte[] bytGeneratedSHA512Hash = oHashAlgorithm.ComputeHash(bytOriginalData);
+//Lesson01_IntroducingHashAlgorithms.Utilities
+//    .ShowByteArray(bytGeneratedSHA512Hash, "Generated SHA512 Hash");
 
 //// With DI and/or mix of Strategy Pattern (in some cases) your solution could be
 //// compeletly indipendant from the type of hash algorithm you choose

@@ -1,4 +1,4 @@
-﻿namespace Lesson02_HashPerformanceAnalysis;
+﻿namespace HashPerformanceAnalysis;
 
 [BenchmarkDotNet.Attributes.MemoryDiagnoser]
 [BenchmarkDotNet.Attributes.Orderer(BenchmarkDotNet.Order.SummaryOrderPolicy.FastestToSlowest)]

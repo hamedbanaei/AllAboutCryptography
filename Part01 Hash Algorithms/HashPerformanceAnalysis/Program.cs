@@ -1,1 +1,1 @@
-﻿var summary = BenchmarkDotNet.Running.BenchmarkRunner.Run<Lesson02_HashPerformanceAnalysis.HashAlgorithms>();
+﻿var summary = BenchmarkDotNet.Running.BenchmarkRunner.Run<HashPerformanceAnalysis.HashAlgorithms>();

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.1.11312.151 d18.0
+VisualStudioVersion = 18.1.11312.151
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Part01 Hash Algorithms", "Part01 Hash Algorithms", "{45EE2473-1471-470D-A304-A2AD97F5FFDB}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HashAlgorithms", "Part01 Hash Algorithms\HashAlgorithms\HashAlgorithms.csproj", "{5EC21EEB-C48B-45D9-BB97-FC595410A20A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashPerformanceAnalysis", "Part01 Hash Algorithms\HashPerformanceAnalysis\HashPerformanceAnalysis.csproj", "{65178561-59CC-4276-98C1-9F309BC8A83C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SymmetricAlgorithms", "Part02 Encryption Algorithms\SymmetricAlgorithms\SymmetricAlgorithms.csproj", "{63076237-2C21-48D8-9D8D-F67F6D0940A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,10 @@ Global
 		{65178561-59CC-4276-98C1-9F309BC8A83C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65178561-59CC-4276-98C1-9F309BC8A83C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65178561-59CC-4276-98C1-9F309BC8A83C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63076237-2C21-48D8-9D8D-F67F6D0940A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63076237-2C21-48D8-9D8D-F67F6D0940A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63076237-2C21-48D8-9D8D-F67F6D0940A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63076237-2C21-48D8-9D8D-F67F6D0940A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{5EC21EEB-C48B-45D9-BB97-FC595410A20A} = {45EE2473-1471-470D-A304-A2AD97F5FFDB}
 		{65178561-59CC-4276-98C1-9F309BC8A83C} = {45EE2473-1471-470D-A304-A2AD97F5FFDB}
+		{63076237-2C21-48D8-9D8D-F67F6D0940A0} = {F5A0F399-6740-40FE-8733-1D3A0EA9A199}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9F3E4EC-F5AB-4AF8-8FA4-F1232DF167CC}

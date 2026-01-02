@@ -3,20 +3,20 @@
 //********** ********** ********** ********** ********** 
 
 // This is our Original Data which we want to compute hash for
-using HashAlgorithms;
+using CommonMethods;
 
 byte[] bytOriginalData = new byte[100];
 
 // We randomely generate an array of bytes to use as Original Data
 // Don't worry! We'll learn how to compute hash of everything latter.
 System.Security.Cryptography.RandomNumberGenerator.Create().GetBytes(bytOriginalData);
-Utilities.ShowByteArray(bytOriginalData, "Generated Original Data");
+Utility.ShowData(bytOriginalData, "Generated Original Data");
 
 System.Console.WriteLine(System.Environment.NewLine);
 
 // Bingo! we successfully generate our Original Data's Hash.
 byte[] bytGeneratedHash = System.Security.Cryptography.MD5.HashData(bytOriginalData);
-Utilities.ShowByteArray(bytGeneratedHash, "Generated Hash");
+Utility.ShowData(bytGeneratedHash, "Generated Hash");
 
 //********** ********** ********** ********** ********** 
 //********** ********** ********** ********** ********** 
@@ -31,35 +31,31 @@ Utilities.ShowByteArray(bytGeneratedHash, "Generated Hash");
 // Learn 02 - Introduction to available hash algorithms
 //********** ********** ********** ********** ********** 
 
+//using CommonMethods;
+
 //// This is our Original Data which we want to compute hash for
 //byte[] bytOriginalData = new byte[100];
 
 //// We randomely generate an array of bytes to use as Original Data
 //// Don't worry! We'll learn how to compute hash of everything latter.
 //System.Security.Cryptography.RandomNumberGenerator.Create().GetBytes(bytOriginalData);
-//HashAlgorithms.Utilities
-//    .ShowByteArray(bytOriginalData, "Generated Original Data");
+//Utility.ShowData(bytOriginalData, "Generated Original Data");
 
 //// Here is a list of well-know widly used hash algorithms:
 //byte[] bytGeneratedMD5Hash = System.Security.Cryptography.MD5.HashData(bytOriginalData);
-//HashAlgorithms.Utilities
-//    .ShowByteArray(bytGeneratedMD5Hash, "Generated MD5 Hash");
+//Utility.ShowData(bytGeneratedMD5Hash, "Generated MD5 Hash");
 
 //byte[] bytGeneratedSHA1Hash = System.Security.Cryptography.SHA1.HashData(bytOriginalData);
-//HashAlgorithms.Utilities
-//    .ShowByteArray(bytGeneratedSHA1Hash, "Generated SHA1 Hash");
+//Utility.ShowData(bytGeneratedSHA1Hash, "Generated SHA1 Hash");
 
 //byte[] bytGeneratedSHA256Hash = System.Security.Cryptography.SHA256.HashData(bytOriginalData);
-//HashAlgorithms.Utilities
-//    .ShowByteArray(bytGeneratedSHA256Hash, "Generated SHA256 Hash");
+//Utility.ShowData(bytGeneratedSHA256Hash, "Generated SHA256 Hash");
 
 //byte[] bytGeneratedSHA384Hash = System.Security.Cryptography.SHA384.HashData(bytOriginalData);
-//HashAlgorithms.Utilities
-//    .ShowByteArray(bytGeneratedSHA384Hash, "Generated SHA384 Hash");
+//Utility.ShowData(bytGeneratedSHA384Hash, "Generated SHA384 Hash");
 
 //byte[] bytGeneratedSHA512Hash = System.Security.Cryptography.SHA512.HashData(bytOriginalData);
-//HashAlgorithms.Utilities
-//    .ShowByteArray(bytGeneratedSHA512Hash, "Generated SHA512 Hash");
+//Utility.ShowData(bytGeneratedSHA512Hash, "Generated SHA512 Hash");
 
 
 //// All the preceding hash classes are children of the class: System.Security.Cryptography.HashAlgorithm
@@ -84,6 +80,8 @@ Utilities.ShowByteArray(bytGeneratedHash, "Generated Hash");
 ////          2) Using of Strategy Patterns
 ////          3) ...
 
+//using CommonMethods;
+
 //// This is our Original Data which we want to compute hash for
 //byte[] bytOriginalData = new byte[100];
 
@@ -91,35 +89,29 @@ Utilities.ShowByteArray(bytGeneratedHash, "Generated Hash");
 //// Don't worry! We'll learn how to compute hash of everything latter.
 //System.Security.Cryptography.RandomNumberGenerator.Create().GetBytes(bytOriginalData);
 
-//HashAlgorithms.Utilities
-//    .ShowByteArray(bytOriginalData, "Generated Original Data");
+//Utility.ShowData(bytOriginalData, "Generated Original Data");
 
 //System.Security.Cryptography.HashAlgorithm oHashAlgorithm = null;
 
 //oHashAlgorithm = System.Security.Cryptography.MD5.Create();
 //byte[] bytGeneratedMD5Hash = oHashAlgorithm.ComputeHash(bytOriginalData);
-//HashAlgorithms.Utilities
-//    .ShowByteArray(bytGeneratedMD5Hash, "Generated MD5 Hash");
+//Utility.ShowData(bytGeneratedMD5Hash, "Generated MD5 Hash");
 
 //oHashAlgorithm = System.Security.Cryptography.SHA1.Create();
 //byte[] bytGeneratedSHA1Hash = oHashAlgorithm.ComputeHash(bytOriginalData);
-//HashAlgorithms.Utilities
-//    .ShowByteArray(bytGeneratedSHA1Hash, "Generated SHA1 Hash");
+//Utility.ShowData(bytGeneratedSHA1Hash, "Generated SHA1 Hash");
 
 //oHashAlgorithm = System.Security.Cryptography.SHA256.Create();
 //byte[] bytGeneratedSHA256Hash = oHashAlgorithm.ComputeHash(bytOriginalData);
-//HashAlgorithms.Utilities
-//    .ShowByteArray(bytGeneratedSHA256Hash, "Generated SHA256 Hash");
+//Utility.ShowData(bytGeneratedSHA256Hash, "Generated SHA256 Hash");
 
 //oHashAlgorithm = System.Security.Cryptography.SHA384.Create();
 //byte[] bytGeneratedSHA384Hash = oHashAlgorithm.ComputeHash(bytOriginalData);
-//HashAlgorithms.Utilities
-//    .ShowByteArray(bytGeneratedSHA384Hash, "Generated SHA384 Hash");
+//Utility.ShowData(bytGeneratedSHA384Hash, "Generated SHA384 Hash");
 
 //oHashAlgorithm = System.Security.Cryptography.SHA512.Create();
 //byte[] bytGeneratedSHA512Hash = oHashAlgorithm.ComputeHash(bytOriginalData);
-//HashAlgorithms.Utilities
-//    .ShowByteArray(bytGeneratedSHA512Hash, "Generated SHA512 Hash");
+//Utility.ShowData(bytGeneratedSHA512Hash, "Generated SHA512 Hash");
 
 //// With DI and/or mix of Strategy Pattern (in some cases) your solution could be
 //// compeletly indipendant from the type of hash algorithm you choose
@@ -142,6 +134,9 @@ Utilities.ShowByteArray(bytGeneratedHash, "Generated Hash");
 ////          2) Compute hash of your Original Data which you just converted to array of bytes
 ////          3) You may saved computed hash as an array of bytes or convert it to string and save the result
 
+//using CommonMethods;
+//using static System.Runtime.InteropServices.JavaScript.JSType;
+
 //// This is our Original Data which we want to compute hash for and consider that its type is string
 //string strOriginalData = "Hello, my name is Hamed Banaei, you can call me Kourosh, that's my nickname. Glad to share this information with you.";
 
@@ -160,8 +155,8 @@ Utilities.ShowByteArray(bytGeneratedHash, "Generated Hash");
 //string strHashInBase64Format = System.Convert.ToBase64String(bytGeneratedHash);
 //// It's safe and generate just visible characters, not anything else!
 
-//System.Console.WriteLine($"Original Data: {strOriginalData}");
-//System.Console.WriteLine($"Generated Hash: {strHashInBase64Format}");
+//Utility.ShowData(strOriginalData, "Original Data");
+//Utility.ShowData(strHashInBase64Format, "Generated Hash");
 
 //********** ********** ********** ********** ********** 
 //********** ********** ********** ********** ********** 
@@ -230,7 +225,6 @@ Utilities.ShowByteArray(bytGeneratedHash, "Generated Hash");
 
 //// Lets Try:
 
-//using System.Linq;
 //using HashAlgorithms.Learn06; // Lets use it for simply focus to user learning
 
 //if (DbContext.Login("Hamed", "123"))
@@ -339,7 +333,7 @@ Utilities.ShowByteArray(bytGeneratedHash, "Generated Hash");
 
 //// Is here any kind of validation available that we can find out
 //// If the data is valid and nobody tampered it?
-// Lets see in the following Learn09
+////Lets see in the following Learn09
 
 //********** ********** ********** ********** ********** 
 //********** ********** ********** ********** ********** 

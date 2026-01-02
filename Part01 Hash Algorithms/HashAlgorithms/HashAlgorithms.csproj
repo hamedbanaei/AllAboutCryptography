@@ -7,4 +7,8 @@
     <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\CommonMethods\CommonMethods.csproj" />
+  </ItemGroup>
+
 </Project>

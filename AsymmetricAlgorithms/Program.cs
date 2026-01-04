@@ -21,11 +21,16 @@ byte[] bytPrivateKey = rsaAlgorithm.ExportRSAPrivateKey();
 string strPublicKey = System.Convert.ToBase64String(bytPublicKey);
 string strPrivateKey = System.Convert.ToBase64String(bytPrivateKey);
 
+string strXmlPublicKey = rsaAlgorithm.ToXmlString(false);
+string strXmlPrivateKey = rsaAlgorithm.ToXmlString(true);
+
 Utility.ShowData(bytPublicKey, "PublicKey as Byte Array");
 Utility.ShowData(strPublicKey, "PublicKey as String (ToBase64String Result)");
+Utility.ShowData(strXmlPublicKey, "PublicKey as XML String");
 
 Utility.ShowData(bytPrivateKey, "PrivateKey as Byte Array");
 Utility.ShowData(strPrivateKey, "PrivateKey as String (ToBase64String Result)");
+Utility.ShowData(strXmlPrivateKey, "PrivateKey as XML (Infact contains both keys parameters!)");
 
 // Encrypt Plain Data => Cipher Data
 byte[] bytCipherData = rsaAlgorithm.Encrypt(bytPlainData, System.Security.Cryptography.RSAEncryptionPadding.Pkcs1);

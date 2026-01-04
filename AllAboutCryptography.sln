@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{A088F6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonMethods", "Shared\CommonMethods\CommonMethods.csproj", "{26461EF8-851F-4E50-82F8-6C4535681AC5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsymmetricAlgorithms", "AsymmetricAlgorithms\AsymmetricAlgorithms.csproj", "{C09F25E1-C215-4175-9280-E08DACCE9F14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{26461EF8-851F-4E50-82F8-6C4535681AC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26461EF8-851F-4E50-82F8-6C4535681AC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26461EF8-851F-4E50-82F8-6C4535681AC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C09F25E1-C215-4175-9280-E08DACCE9F14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C09F25E1-C215-4175-9280-E08DACCE9F14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C09F25E1-C215-4175-9280-E08DACCE9F14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C09F25E1-C215-4175-9280-E08DACCE9F14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +54,7 @@ Global
 		{65178561-59CC-4276-98C1-9F309BC8A83C} = {45EE2473-1471-470D-A304-A2AD97F5FFDB}
 		{63076237-2C21-48D8-9D8D-F67F6D0940A0} = {F5A0F399-6740-40FE-8733-1D3A0EA9A199}
 		{26461EF8-851F-4E50-82F8-6C4535681AC5} = {A088F666-A9C3-486F-8603-E858CB205FCA}
+		{C09F25E1-C215-4175-9280-E08DACCE9F14} = {F5A0F399-6740-40FE-8733-1D3A0EA9A199}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9F3E4EC-F5AB-4AF8-8FA4-F1232DF167CC}

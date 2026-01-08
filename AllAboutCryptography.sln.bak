@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{A088F6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonMethods", "Shared\CommonMethods\CommonMethods.csproj", "{26461EF8-851F-4E50-82F8-6C4535681AC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsymmetricAlgorithms", "Part02 Encryption Algorithms\AsymmetricAlgorithms\AsymmetricAlgorithms.csproj", "{C09F25E1-C215-4175-9280-E08DACCE9F14}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsymmetricAlgorithms", "AsymmetricAlgorithms\AsymmetricAlgorithms.csproj", "{C09F25E1-C215-4175-9280-E08DACCE9F14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

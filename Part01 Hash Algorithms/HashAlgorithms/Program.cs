@@ -135,7 +135,6 @@ Utility.ShowData(bytGeneratedHash, "Generated Hash");
 ////          3) You may saved computed hash as an array of bytes or convert it to string and save the result
 
 //using CommonMethods;
-//using static System.Runtime.InteropServices.JavaScript.JSType;
 
 //// This is our Original Data which we want to compute hash for and consider that its type is string
 //string strOriginalData = "Hello, my name is Hamed Banaei, you can call me Kourosh, that's my nickname. Glad to share this information with you.";
@@ -156,6 +155,7 @@ Utility.ShowData(bytGeneratedHash, "Generated Hash");
 //// It's safe and generate just visible characters, not anything else!
 
 //Utility.ShowData(strOriginalData, "Original Data");
+//Utility.ShowData(strHash, "UTF8 Encoding of Hashed data");
 //Utility.ShowData(strHashInBase64Format, "Generated Hash");
 
 //********** ********** ********** ********** ********** 
@@ -275,7 +275,6 @@ Utility.ShowData(bytGeneratedHash, "Generated Hash");
 
 //// Lets Try:
 
-//using System.Linq;
 //using HashAlgorithms.Learn07; // Lets use it for simply focus to user learning
 
 //if (DbContext.Login("Hamed", "123"))
